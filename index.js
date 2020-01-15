@@ -5,6 +5,7 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-import header_main from './wrappers/header_main';
+import Speaking from './speaking_js/speaking';
+import Reading from './reading_js/reading';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Speaking);

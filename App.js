@@ -17,8 +17,6 @@ import {
   Image,
 } from 'react-native';
 
-import Header_main from './wrappers/header_main';
-import Skill_main from './wrappers/skill_main';
 import Speaking from './speaking_js/speaking';
 
 export default class App extends React.Component {
