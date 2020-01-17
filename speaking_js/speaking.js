@@ -17,8 +17,7 @@ export default class Speaking extends React.Component {
   };
 
   recordStatusChange = () => {
-    // eslint-disable-next-line eqeqeq
-    this.state.record_status == false
+    this.state.record_status === false
       ? this.setState({record_status: true})
       : this.setState({record_status: false});
   };
