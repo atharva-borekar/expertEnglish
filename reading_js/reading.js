@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default class Reading extends React.Component {
@@ -14,7 +8,33 @@ export default class Reading extends React.Component {
     this.setText({TextHolder: 'This is new text'});
   };
 
-  state = {radioButton: null, selected_option: null};
+  state = {
+    radioButton: null,
+    selected_option: null,
+    correct_option: 'option1',
+    color1: '#8d201f',
+    color2: '#8d201f',
+    color3: '#8d201f',
+    color4: '#8d201f',
+  };
+
+  setColor = () => {
+    const x = this.state.correct_option;
+    switch (x) {
+      case 'option1':
+        this.state.color1 = '#00a86b';
+        break;
+      case 'option2':
+        this.state.color2 = '#00a86b';
+        break;
+      case 'option3':
+        this.state.color3 = '#00a86b';
+        break;
+      case 'option4':
+        this.state.color4 = '#00a86b';
+        break;
+    }
+  };
 
   render() {
     return (
@@ -29,7 +49,7 @@ export default class Reading extends React.Component {
               this.setState({
                 radioButton: 'option1',
                 selected_option: 'option1',
-              })
+              }) || this.setColor()
             }>
             <Icon
               name={
@@ -37,6 +57,7 @@ export default class Reading extends React.Component {
                   ? 'alpha-a-circle'
                   : 'alpha-a-circle-outline'
               }
+              color={this.state.color1}
               size={50}
               style={styles.checkbox_icon}
             />
@@ -48,7 +69,7 @@ export default class Reading extends React.Component {
               this.setState({
                 radioButton: 'option2',
                 selected_option: 'option2',
-              })
+              }) || this.setColor()
             }>
             <Icon
               name={
@@ -56,6 +77,7 @@ export default class Reading extends React.Component {
                   ? 'alpha-b-circle'
                   : 'alpha-b-circle-outline'
               }
+              color={this.state.color2}
               size={50}
               style={styles.checkbox_icon}
             />
@@ -67,7 +89,7 @@ export default class Reading extends React.Component {
               this.setState({
                 radioButton: 'option3',
                 selected_option: 'option3',
-              })
+              }) || this.setColor()
             }>
             <Icon
               name={
@@ -75,6 +97,7 @@ export default class Reading extends React.Component {
                   ? 'alpha-c-circle'
                   : 'alpha-c-circle-outline'
               }
+              color={this.state.color3}
               size={50}
               style={styles.checkbox_icon}
             />
@@ -86,7 +109,7 @@ export default class Reading extends React.Component {
               this.setState({
                 radioButton: 'option4',
                 selected_option: 'option4',
-              })
+              }) || this.setColor()
             }>
             <Icon
               name={
@@ -94,6 +117,7 @@ export default class Reading extends React.Component {
                   ? 'alpha-d-circle'
                   : 'alpha-d-circle-outline'
               }
+              color={this.state.color4}
               size={50}
               style={styles.checkbox_icon}
             />
@@ -123,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ede6e9',
     borderRadius: 15,
     marginTop: '10%',
-    height: '40%',
+    height: '30%',
     justifyContent: 'center',
     alignSelf: 'center',
     elevation: 20,
