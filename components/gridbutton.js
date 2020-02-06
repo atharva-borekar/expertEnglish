@@ -8,6 +8,7 @@ export default class GridButton extends React.Component {
     return (
       <TouchableOpacity>
         <View
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             backgroundColor: '#f5f9e9',
             height: 80,

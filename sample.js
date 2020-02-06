@@ -20,7 +20,7 @@ export default class Sample extends React.Component {
           <Text style={styles.headtext}>Heading</Text>
         </View>
         <View style={styles.list}>
-          <ScrollView horizontal={true} style={{marginLeft: 30, elevation: -5}}>
+          <ScrollView style={{marginLeft: 30, elevation: -5}}>
             <GridButton GridButtonText="Reading" />
             <GridButton GridButtonText="Speaking" />
             <GridButton GridButtonText="Listening" />
