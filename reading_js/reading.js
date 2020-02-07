@@ -7,13 +7,14 @@ export default class Reading extends React.Component {
   text_state = {
     //All the text for the mcqs
     // Question Text
-    TextHolder:
-      " graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, g out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes knog out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes knog out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes knog out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+    TextHolder: 'TextHolder',
+
     //Options text
-    ans1: '',
-    ans2: '',
-    ans3: '',
-    ans4: '',
+    op1: 'aaa',
+    op2: 'bbb',
+    op3: 'ccc',
+    op4: 'ddd',
+    correct_option: 'option1', //Specifies correct option
   };
 
   changeText = () => {
@@ -29,7 +30,6 @@ export default class Reading extends React.Component {
     //States for mcq functioning
     radioButton: null, //State of the Button
     selected_option: null, //State of the Selected Button
-    correct_option: 'option1', //Specifies correct option
     color1: '#8d201f',
     color2: '#8d201f',
     color3: '#8d201f',
@@ -38,7 +38,7 @@ export default class Reading extends React.Component {
 
   setColor = () => {
     //Function to change color onPress
-    const x = this.state.correct_option;
+    const x = this.text_state.correct_option;
     switch (x) {
       case 'option1':
         this.state.color1 = '#00a86b';
@@ -56,6 +56,7 @@ export default class Reading extends React.Component {
   };
 
   render() {
+    const {TextHolder, op1, op2, op3, op4, correct_option} = this.props;
     return (
       <View style={styles.base}>
         <ScrollView>
@@ -89,7 +90,7 @@ export default class Reading extends React.Component {
                 style={styles.checkbox_icon}
               />
               {/* Display the text for the option */}
-              <Text style={styles.checkbox_text}>{this.text_state.ans1}</Text>
+              <Text style={styles.checkbox_text}>{this.text_state.op1}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.checkbox}
@@ -109,7 +110,7 @@ export default class Reading extends React.Component {
                 size={50}
                 style={styles.checkbox_icon}
               />
-              <Text style={styles.checkbox_text}>{this.text_state.ans2}</Text>
+              <Text style={styles.checkbox_text}>{this.text_state.op2}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.checkbox}
@@ -129,7 +130,7 @@ export default class Reading extends React.Component {
                 size={50}
                 style={styles.checkbox_icon}
               />
-              <Text style={styles.checkbox_text}>{this.text_state.ans3}</Text>
+              <Text style={styles.checkbox_text}>{this.text_state.op3}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.checkbox}
@@ -149,18 +150,17 @@ export default class Reading extends React.Component {
                 size={50}
                 style={styles.checkbox_icon}
               />
-              <Text style={styles.checkbox_text}>{this.text_state.ans4}</Text>
+              <Text style={styles.checkbox_text}>{this.text_state.op4}</Text>
             </TouchableOpacity>
 
             <Text style={styles.selected_option_text}>
               Option Selected: {this.state.selected_option}
             </Text>
-
-            <TouchableOpacity style={styles.submit_button}>
-              <Text style={styles.submit_button_text}>Submit</Text>
-            </TouchableOpacity>
           </View>
         </ScrollView>
+        <TouchableOpacity style={styles.submit_button}>
+          <Text style={styles.submit_button_text}>Submit</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -176,7 +176,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ede6e9',
     borderRadius: 15,
     marginTop: '10%',
-    height: '30%',
     justifyContent: 'center',
     alignSelf: 'center',
     elevation: 20,
@@ -218,6 +217,7 @@ const styles = StyleSheet.create({
     marginTop: '8%',
     marginLeft: '25%',
     marginRight: '25%',
+    marginBottom: '3%',
   },
   submit_button_text: {
     color: '#ffffff',

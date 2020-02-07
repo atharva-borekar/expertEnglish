@@ -1,29 +1,20 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Image,
-  Dimensions,
-} from 'react-native';
-import list from '../components/list';
+import {SafeAreaView, StyleSheet, ScrollView, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import Sample from '../sample';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Grid from '../grid';
 
 export default class HomeScreen extends React.Component {
   render() {
     return (
       <View>
-        <TouchableOpacity>
-          <Icon name={'menu'} size={50} />
-        </TouchableOpacity>
-
-        <Sample />
-        <Sample />
+        <ScrollView>
+          <TouchableOpacity>
+            <Icon name={'menu'} size={50} />
+          </TouchableOpacity>
+          <Grid />
+        </ScrollView>
       </View>
     );
   }

@@ -5,6 +5,7 @@ import {createDrawerNavigator, DrawerItems} from 'react-navigation-drawer';
 import HomeScreen from './screens/HomeScreen';
 import ReferralScreen from './screens/ReferralScreen';
 import Sample from './sample';
+import {Entypo} from 'react-native-vector-icons';
 
 import AboutScreen from './screens/AboutScreen';
 
@@ -37,7 +38,15 @@ const CustomDrawerComponent = props => (
 
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Home: HomeScreen,
+    Home: {
+      screen: HomeScreen,
+      drawerNavigationOptions: {
+        title: 'Home',
+        drawerIcon: ({tintColor}) => (
+          <Entypo name="home" size={16} color={tintColor} />
+        ),
+      },
+    },
     Referral: ReferralScreen,
     'About Us': AboutScreen,
   },

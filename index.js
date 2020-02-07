@@ -11,5 +11,6 @@ import Reading1 from './reading_js/reading1';
 import Sample from './sample';
 import Grid from './grid';
 import GridBut from './gridbut';
+import Flashcard from './components/flashcard';
 
-AppRegistry.registerComponent(appName, () => Grid);
+AppRegistry.registerComponent(appName, () => Reading1);
