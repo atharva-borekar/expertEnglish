@@ -14,51 +14,37 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class GridBut extends React.Component {
   render() {
-    const {text1, text2, colour} = this.props;
+    const {text} = this.props;
     return (
       <TouchableOpacity>
         <View style={styles.base}>
-          <View style={styles.buttonbase}>
+          <View style={{alignContent: 'center'}}>
             <Image
-              style={{height: '100%', width: '100%'}}
               source={require('./images/button.png')}
+              style={{height: 70, width: 110, marginTop: -50}}
             />
-            <Text
-              style={{
-                position: 'absolute',
-                alignSelf: 'center',
-                fontWeight: 'bold',
-                color: '#ffffff',
-              }}>
-              {text2}
-            </Text>
-            {/* <Text
-              style={{
-                alignSelf: 'center',
-                color: '#ffffff',
-                fontWeight: 'bold',
-                margin: 5,
-                fontSize: 30,
-              }}>
-              {text1}
-            </Text> */}
           </View>
-          {/* <View style={{width: 110, justifyContent: 'center'}}>
-            <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>
-              {text2}
+          <View>
+            <Text
+              style={{alignSelf: 'center', position: 'absolute', fontSize: 12}}>
+              {text}
             </Text>
-          </View> */}
+          </View>
         </View>
       </TouchableOpacity>
     );
   }
 }
 const styles = StyleSheet.create({
-  base: {padding: 5},
-  buttonbase: {
+  base: {
     height: 110,
     width: 110,
-    borderRadius: 25,
+    backgroundColor: '#ffffff',
+    shadowOffset: {width: 5, height: 5},
+    shadowOpacity: 1,
+    shadowColor: '#000000',
     justifyContent: 'center',
+    alignContent: 'center',
+    padding: 5,
   },
 });

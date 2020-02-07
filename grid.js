@@ -25,13 +25,17 @@ export default class Grid extends React.Component {
           </View>
 
           <View
+            // eslint-disable-next-line react-native/no-inline-styles
             style={{
               backgroundColor: '#F2F4F3',
               width: '60%',
-              paddingTop: 20,
+              borderTopRightRadius: 20,
+              marginTop: 20,
+              marginLeft: '3%',
             }}>
             <View style={styles.heading}>
               <Text
+                // eslint-disable-next-line react-native/no-inline-styles
                 style={{
                   fontWeight: 'bold',
                   fontSize: 16,
@@ -42,16 +46,18 @@ export default class Grid extends React.Component {
               </Text>
             </View>
             <View
+              // eslint-disable-next-line react-native/no-inline-styles
               style={{
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 alignContent: 'space-between',
+                marginTop: 5,
               }}>
               <ScrollView horizontal={true} style={{elevation: -10}}>
-                <GridBut text2="Active and Passive Voice" text1="A/P" />
-                <GridBut text2="Antonyms" text1="A" />
-                <GridBut text2="Determiners" text1="D" />
-                <GridBut text2="Figure Of Speech" text1="FoS" />
+                <GridBut text="Active and Passive Voice" />
+                <GridBut text="Antonyms" />
+                <GridBut text="Determiners" />
+                <GridBut text="Figure Of Speech" />
               </ScrollView>
             </View>
           </View>
@@ -62,8 +68,9 @@ export default class Grid extends React.Component {
               borderTopLeftRadius: 20,
               borderBottomLeftRadius: 20,
               width: '60%',
-              paddingTop: 20,
-              marginLeft: '40%',
+              borderTopRightRadius: 20,
+              marginTop: 20,
+              marginLeft: '37%',
             }}>
             <View style={styles.heading}>
               <Text
@@ -73,7 +80,7 @@ export default class Grid extends React.Component {
                   marginLeft: 30,
                   color: '#ffffff',
                 }}>
-                Practice makes one perfect!
+                Practice!!
               </Text>
             </View>
             <View
@@ -83,9 +90,9 @@ export default class Grid extends React.Component {
                 alignContent: 'space-between',
               }}>
               <ScrollView horizontal={true} style={{elevation: -10}}>
-                <GridBut text2="Fill in the Blanks" text1="F" />
-                <GridBut text2="Idioms and Phrases" text1="I/P" />
-                <GridBut text2="Noun Clauses" text1="NC" />
+                <GridBut text="Fill in the Blanks" />
+                <GridBut text="Idioms and Phrases" />
+                <GridBut text="Noun Clauses" />
               </ScrollView>
             </View>
           </View>
@@ -95,7 +102,9 @@ export default class Grid extends React.Component {
               borderTopLeftRadius: 20,
               borderBottomLeftRadius: 20,
               width: '60%',
-              paddingTop: 20,
+              borderTopRightRadius: 20,
+              marginTop: 20,
+              marginLeft: '3%',
             }}>
             <View style={styles.heading}>
               <Text
@@ -116,9 +125,9 @@ export default class Grid extends React.Component {
                 alignContent: 'space-between',
               }}>
               <ScrollView horizontal={true} style={{elevation: -10}}>
-                <GridBut text2="Proverb" text1="P" />
-                <GridBut text2="Punctuation Marks" text1="PM" />
-                <GridBut text2="Sentence Improvement" text1="SI" />
+                <GridBut text="Proverb" />
+                <GridBut text="Punctuation Marks" />
+                <GridBut text="Sentence Improvement" />
               </ScrollView>
             </View>
           </View>
@@ -127,9 +136,10 @@ export default class Grid extends React.Component {
               backgroundColor: '#F2F4F3',
               borderTopLeftRadius: 20,
               borderBottomLeftRadius: 20,
+              borderTopRightRadius: 20,
+              marginTop: 20,
+              marginLeft: '37%',
               width: '60%',
-              paddingTop: 20,
-              marginLeft: '40%',
             }}>
             <View style={styles.heading}>
               <Text
@@ -139,7 +149,7 @@ export default class Grid extends React.Component {
                   marginLeft: 30,
                   color: '#ffffff',
                 }}>
-                Recordings
+                Conversations
               </Text>
             </View>
             <View
@@ -149,9 +159,9 @@ export default class Grid extends React.Component {
                 alignContent: 'space-between',
               }}>
               <ScrollView horizontal={true} style={{elevation: -10}}>
-                <GridBut text2="Spot the Error" text1="STE" />
-                <GridBut text2="Synonyms" text1="S" />
-                <GridBut text2="Verb and Adverb" text1="VA" />
+                <GridBut text="Spot the Error" />
+                <GridBut text="Synonyms" />
+                <GridBut text="Verb and Adverb" />
               </ScrollView>
             </View>
           </View>
@@ -162,7 +172,7 @@ export default class Grid extends React.Component {
 }
 const styles = StyleSheet.create({
   base: {
-    backgroundColor: '#EBFCFB',
+    backgroundColor: '#ede6e3',
   },
   heading: {
     backgroundColor: '#3C3C3C',

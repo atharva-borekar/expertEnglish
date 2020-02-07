@@ -14,4 +14,4 @@ import Grid from './grid';
 import GridBut from './gridbut';
 import Flashcard from './components/flashcard';
 
-AppRegistry.registerComponent(appName, () => App1);
+AppRegistry.registerComponent(appName, () => Grid);
