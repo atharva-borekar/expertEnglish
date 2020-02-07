@@ -4,28 +4,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {ScrollView} from 'react-native-gesture-handler';
 
 export default class Reading1 extends React.Component {
-  text_state = {
-    //All the text for the mcqs
-    // Question Text
-    TextHolder: 'TextHolder',
-
-    //Options text
-    op1: 'aaa',
-    op2: 'bbb',
-    op3: 'ccc',
-    op4: 'ddd',
-    //Specifies correct option
-  };
-
-  changeText = () => {
-    // Function to change text
-    this.setText({TextHolder: 'This is new text'});
-    this.setText({ans1: ''});
-    this.setText({ans2: ''});
-    this.setText({ans3: ''});
-    this.setText({ans4: ''});
-  };
-
   state = {
     //States for mcq functioning
     radioButton: null, //State of the Button
@@ -39,23 +17,24 @@ export default class Reading1 extends React.Component {
   render() {
     this.setColor = () => {
       //Function to change color onPress
-      const x = this.props.correct_option; //correct option must be op1 || op2 || op3 || op4
+      const x = correct_option; //correct option must be op1 || op2 || op3 || op4
       switch (x) {
-        case op1:
+        case 'op1':
           this.state.color1 = '#00a86b';
           break;
-        case op2:
+        case 'op2':
           this.state.color2 = '#00a86b';
           break;
-        case op3:
+        case 'op3':
           this.state.color3 = '#00a86b';
           break;
-        case op4:
+        case 'op4':
           this.state.color4 = '#00a86b';
           break;
       }
     };
     const {TextHolder, op1, op2, op3, op4, correct_option} = this.props;
+    //All the props must be strings like "Lorem Ipsum"
     return (
       <View style={styles.base}>
         <ScrollView>
@@ -178,6 +157,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     elevation: 20,
+    height: '40%',
   },
   question: {
     justifyContent: 'center',

@@ -4,13 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {ScrollView} from 'react-native-gesture-handler';
 
 export default class Reading extends React.Component {
-  text_state = {
-    // Flashcard Text
-    TextHolder:
-      "graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, g out print, graphic ographic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, g out print, graphic ographic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, g out print, graphic ographic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, g out print, graphic o graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, g out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes knog out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes knog out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes knog out print, graphic or web desighave scrorum for use in a type specimen book.Lorem ipsum, or lipsum is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
-  };
-
   render() {
+    const {flash_text} = this.props;
     return (
       <View style={styles.base}>
         <View style={styles.instruction}>
@@ -18,7 +13,7 @@ export default class Reading extends React.Component {
         </View>
         <View style={styles.card}>
           <ScrollView>
-            <Text style={{padding: '5%'}}>{this.text_state.TextHolder}</Text>
+            <Text style={{padding: '5%'}}>{flash_text}</Text>
           </ScrollView>
         </View>
         <TouchableOpacity style={styles.submit_button}>
