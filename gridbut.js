@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Image,
-  Dimensions,
-} from 'react-native';
-import GridButton from './components/gridbutton';
+import {StyleSheet, View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class GridBut extends React.Component {
@@ -37,7 +27,7 @@ export default class GridBut extends React.Component {
 }
 const styles = StyleSheet.create({
   base: {
-    height: 110,
+    height: 105,
     width: 110,
     backgroundColor: '#ffffff',
     shadowOffset: {width: 5, height: 5},
@@ -46,5 +36,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     padding: 5,
+    marginLeft: 10,
   },
 });
