@@ -9,13 +9,15 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
+import {WebView} from 'react-native-webview';
 
 export default class AboutScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>AboutUs Screen</Text>
-      </View>
+      <WebView
+        source={{uri: 'https://expertenglish.co.in'}}
+        style={{marginTop: 20}}
+      />
     );
   }
 }

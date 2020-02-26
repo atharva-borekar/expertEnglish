@@ -47,7 +47,6 @@ const AppDrawerNavigator = createDrawerNavigator(
         ),
       },
     },
-    Referral: ReferralScreen,
     'About Us': AboutScreen,
   },
   {contentComponent: CustomDrawerComponent},

@@ -13,5 +13,11 @@ import Sample from './sample';
 import Grid from './grid';
 import GridBut from './gridbut';
 import Flashcard from './components/flashcard';
+import Conversation from './conversation/conversation';
+import Splash from './screens/Splash';
+import Phone from './screens/Phone';
+import Level from './screens/Level';
+import Extempore from './screens/Extempore';
+import Button_Main from './button_main';
 
-AppRegistry.registerComponent(appName, () => Grid);
+AppRegistry.registerComponent(appName, () => App);
