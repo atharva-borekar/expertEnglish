@@ -2,12 +2,15 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import fill from './images/fill.jpg';
+import fill from './images/fill.png';
 import spot from './images/spot.png';
-import shuffle from './images/shuffle.gif';
-import conversation from './images/conversation.jpg';
+import conversation from './images/conversation.png';
 import button from './images/button.png';
 import sentenceimprovement from './images/sentenceimprovement.jpg';
+import activepassive from './images/activepassive.png';
+import verbadverb from './images/verbadverb.jpg';
+import directindirect from './images/directindirect.png';
+import shufflesentence from './images/shufflesentence.png';
 
 export default class GridBut extends React.Component {
   onPress = () => {};
@@ -22,38 +25,43 @@ export default class GridBut extends React.Component {
           return fill;
         case 'spot':
           return spot;
-        case 'shuffle':
-          return shuffle;
         case 'conversation':
           return conversation;
         case 'sentenceimprovement':
           return sentenceimprovement;
+        case 'activepassive':
+          return activepassive;
+        case 'verbadverb':
+          return verbadverb;
+        case 'directindirect':
+          return directindirect;
+        case 'shuffle':
+          return shufflesentence;
         default:
           return button;
       }
     };
     return (
-      <TouchableOpacity onPress={this.onPress}>
+      <TouchableOpacity onPress={this.onPress} style={{marginRight: 5}}>
         <View style={styles.base}>
-          <View style={{alignContent: 'center'}}>
+          <View style={{alignContent: 'center', justifyContent: 'center'}}>
             <Image
               source={this.setImage()}
               style={{
-                height: 70,
-                width: 120,
+                height: 80,
+                width: 80,
                 marginTop: -50,
+                alignSelf: 'center',
               }}
             />
           </View>
-          <View>
+          <View style={{alignContent: 'center'}}>
             <Text
               // eslint-disable-next-line react-native/no-inline-styles
               style={{
-                alignSelf: 'center',
                 position: 'absolute',
-                fontSize: 14,
-                paddingLeft: 5,
-                paddingRight: 5,
+                fontSize: 12,
+                alignSelf: 'center',
                 color: '#000000',
                 fontWeight: 'bold',
               }}>
@@ -67,15 +75,13 @@ export default class GridBut extends React.Component {
 }
 const styles = StyleSheet.create({
   base: {
-    height: 105,
-    width: 120,
-    backgroundColor: '#e1e2ef',
-    shadowOffset: {width: 5, height: 5},
-    shadowOpacity: 1,
-    shadowColor: '#000000',
+    height: 125,
+    width: 110,
+    backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignContent: 'center',
-    marginLeft: 10,
-    marginTop: 10,
+    marginLeft: 12,
+    marginTop: 20,
+    borderRadius: 3,
   },
 });

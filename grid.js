@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ScrollView, View, Text} from 'react-native';
 import GridBut from './gridbut';
-import Button_Main from './button_main';
+
 export default class Grid extends React.Component {
   render() {
     return (
@@ -10,110 +10,128 @@ export default class Grid extends React.Component {
           <View style={styles.heading}>
             <Text
               // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontWeight: 'bold',
-                fontSize: 16,
-                marginLeft: '3%',
-                color: '#ffffff',
-              }}>
+              style={styles.head_text}>
               Grammar
             </Text>
           </View>
-          <View
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              alignContent: 'space-between',
-              marginTop: 5,
-              marginBottom: 5,
-            }}>
-            <Button_Main text="Active and Passive Voice" />
-            <Button_Main text="Verb and Adverbs" />
-            <Button_Main text="Direct Indirect Speech" />
+          <View style={styles.grammar}>
+            <GridBut text="Active and Passive Voice" image="activepassive" />
+            <View
+              style={{
+                borderLeftWidth: 1,
+                borderLeftColor: 'black',
+                height: '85%',
+                alignSelf: 'center',
+              }}
+            />
+            <GridBut text="Verbs and Adverbs" image="verbadverb" />
+            <View
+              style={{
+                borderLeftWidth: 1,
+                borderLeftColor: 'black',
+                height: '85%',
+                alignSelf: 'center',
+              }}
+            />
+            <GridBut text="Direct and Indirect Speech" image="directindirect" />
           </View>
-
           <View style={styles.heading1}>
             <Text
               // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontWeight: 'bold',
-                fontSize: 20,
-                marginLeft: '3%',
-                color: '#000000',
-              }}>
-              Exercise
+              style={styles.head_text}>
+              Exercises
             </Text>
           </View>
-          <View
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              alignContent: 'space-between',
-              marginTop: 5,
-              marginBottom: 5,
-              marginLeft: '0%',
-            }}>
+          <View style={styles.grammar}>
             <GridBut text="Fill in the Blanks" image="fill" />
+            <View
+              style={{
+                borderLeftWidth: 1,
+                borderLeftColor: 'black',
+                height: '85%',
+                alignSelf: 'center',
+              }}
+            />
             <GridBut text="Spot The Error" image="spot" />
+            <View
+              style={{
+                borderLeftWidth: 1,
+                borderLeftColor: 'black',
+                height: '85%',
+                alignSelf: 'center',
+              }}
+            />
             <GridBut text="Sentence Improvement" image="sentenceimprovement" />
           </View>
-
           <View style={styles.heading}>
             <Text
               // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontWeight: 'bold',
-                fontSize: 16,
-                marginLeft: '3%',
-                color: '#ffffff',
-              }}>
+              style={styles.head_text}>
               Shuffled World
             </Text>
           </View>
+          <View style={styles.grammar}>
+            <GridBut text="Shuffle Sentence" image="shuffle" />
 
-          <View
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              alignContent: 'space-between',
-              marginTop: 5,
-              marginBottom: 5,
-            }}>
-            <ScrollView horizontal={true}>
-              <GridBut text="Shuffling of Paragraphs" image="shuffle" />
-              <GridBut text="Shuffling of Sentence" image="shuffle" />
-            </ScrollView>
+            <View
+              style={{
+                borderLeftWidth: 1,
+                borderLeftColor: 'black',
+                height: '85%',
+                alignSelf: 'center',
+                marginLeft: '10%',
+                marginRight: '10%',
+              }}
+            />
+
+            <GridBut text="Shuffle Paragrah" image="shuffle" />
           </View>
-
           <View style={styles.heading}>
             <Text
               // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                fontWeight: 'bold',
-                fontSize: 16,
-                marginLeft: '3%',
-                color: '#ffffff',
-              }}>
+              style={styles.head_text}>
               Conversations
             </Text>
           </View>
-          <View
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              alignContent: 'space-between',
-              marginTop: 5,
-              marginBottom: 5,
-            }}>
+          <View style={styles.grammar || {marginBottom: '3%'}}>
             <ScrollView horizontal={true}>
               <GridBut text="Conversation 1" image="conversation" />
-              <GridBut text="Conversation 2" image="conversation" />
-              <GridBut text="Conversation 3" image="conversation" />
-              <GridBut text="Conversation 4" image="conversation" />
+              <View
+                style={{
+                  borderLeftWidth: 1,
+                  borderLeftColor: 'black',
+                  height: '85%',
+                  alignSelf: 'center',
+                }}
+              />
+              <GridBut text="Conversation 1" image="conversation" />
+              <View
+                style={{
+                  borderLeftWidth: 1,
+                  borderLeftColor: 'black',
+                  height: '85%',
+                  alignSelf: 'center',
+                }}
+              />
+              <GridBut text="Conversation 1" image="conversation" />
+              <View
+                style={{
+                  borderLeftWidth: 1,
+                  borderLeftColor: 'black',
+                  height: '85%',
+                  alignSelf: 'center',
+                }}
+              />
+              <GridBut text="Conversation 1" image="conversation" />
+              <View
+                style={{
+                  borderLeftWidth: 1,
+                  borderLeftColor: 'black',
+                  height: '85%',
+                  alignSelf: 'center',
+                }}
+              />
+              <GridBut text="Conversation 1" image="conversation" />
             </ScrollView>
           </View>
         </ScrollView>
@@ -129,8 +147,25 @@ const styles = StyleSheet.create({
   heading: {
     backgroundColor: '#3C3C3C',
     height: 40,
-    justifyContent: 'center',
     marginTop: '3%',
   },
   heading1: {marginTop: '1%'},
+  grammar: {
+    marginLeft: '5%',
+    marginRight: '5%',
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    borderColor: '#ffffff',
+    marginTop: 4,
+    flex: 1,
+    flexDirection: 'row',
+    elevation: 20,
+    justifyContent: 'center',
+  },
+  head_text: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginLeft: '3%',
+    color: '#ffffff',
+  },
 });

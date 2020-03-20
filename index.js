@@ -18,6 +18,5 @@ import Splash from './screens/Splash';
 import Phone from './screens/Phone';
 import Level from './screens/Level';
 import Extempore from './screens/Extempore';
-import Button_Main from './button_main';
 
 AppRegistry.registerComponent(appName, () => App);
