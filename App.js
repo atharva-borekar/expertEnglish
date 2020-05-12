@@ -3,7 +3,6 @@ import {SafeAreaView, StyleSheet, ScrollView, View, Image} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createDrawerNavigator, DrawerItems} from 'react-navigation-drawer';
 import HomeScreen from './screens/HomeScreen';
-import ReferralScreen from './screens/ReferralScreen';
 import Sample from './sample';
 import {Entypo} from 'react-native-vector-icons';
 

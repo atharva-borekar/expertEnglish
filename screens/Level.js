@@ -42,7 +42,7 @@ export default class Level extends Component {
         <RoundedButton
           text="Essential"
           textColor="#000000"
-          backgroundColor="#ffffff"
+          backgroundColor="#ecf0f1"
           //onPress={this.writeEssentialData}
           icon={
             <MaterialIcon name="seed-outline" size={30} style={styles.Icon} />
@@ -51,14 +51,14 @@ export default class Level extends Component {
         <RoundedButton
           text="Effective"
           textColor="#000000"
-          backgroundColor="#ffffff"
+          backgroundColor="#ecf0f1"
           //onPress={this.writeEffectiveData}
           icon={<Icon name="seedling" size={30} style={styles.Icon} />}
         />
         <RoundedButton
           text="Expert"
           textColor="#000000"
-          backgroundColor="#ffffff"
+          backgroundColor="#ecf0f1"
           onPress={this.writeExpertData}
           icon={<EntypoIcon name="tree" size={30} style={styles.Icon} />}
         />
@@ -70,11 +70,10 @@ const styles = StyleSheet.create({
   welcomeWrapper: {
     flex: 1,
     display: 'flex',
-
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ede6e3',
+    backgroundColor: '#bdc3c7',
   },
   welcomeText: {
     fontSize: 27,

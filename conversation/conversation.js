@@ -11,8 +11,14 @@ export default class Conversation extends React.Component {
     return (
       <View style={styles.base}>
         <ScrollView>
-          <ConversationBoxSender text=" Hello Jason, how are you, it's been a long time since we last met?" />
-          <ConversationBoxReceiver text="Oh, hi Sarah I'm have got a new job now and is going great. How about you?" />
+          <ConversationBoxSender
+            person="abcd"
+            text=" Hello Jason, how are you, it's been a long time since we last met?"
+          />
+          <ConversationBoxReceiver
+            person="1234"
+            text="Oh, hi Sarah I'm have got a new job now and is going great. How about you?"
+          />
           <ConversationBoxSender text="Not too bad." />
           <ConversationBoxReceiver text=" How often do you eat at this cafe?" />
           <ConversationBoxSender text="This is my first time my friends kept telling me the food was great, so tonight I decided to try it. What have you been up to?" />
@@ -27,7 +33,7 @@ export default class Conversation extends React.Component {
 
 const styles = StyleSheet.create({
   base: {
-    backgroundColor: '#ede6e3',
+    backgroundColor: '#bdc3c7',
     height: '100%',
   },
   convo: {

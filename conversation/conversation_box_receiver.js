@@ -25,7 +25,7 @@ export default class ConversationBoxReceiver extends React.Component {
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
           maxWidth: '70%',
-          backgroundColor: '#ede6e9',
+          backgroundColor: '#ecf0f1',
           borderRadius: 15,
           alignSelf: 'flex-end',
           elevation: 20,
@@ -33,7 +33,7 @@ export default class ConversationBoxReceiver extends React.Component {
           flexWrap: 'wrap',
           marginLeft: '37.5%',
           marginTop: '2%',
-          paddingRight: '2.5%',
+          marginRight: '2.5%',
         }}>
         {/* View for Question */}
         <TouchableOpacity onPress={this.onPress}>
@@ -44,8 +44,9 @@ export default class ConversationBoxReceiver extends React.Component {
               color={this.state.speechstate ? 'green' : 'red'}
             />
             <Text style={{alignSelf: 'center', marginLeft: '3%'}}>
-              {this.state.speechstate ? 'Playing' : 'Stopped'}
+              {this.state.speechstate ? 'Playing-' : 'Stopped-'}
             </Text>
+            <Text style={styles.person}>{person}</Text>
           </View>
 
           <Text style={styles.question}>{text}</Text>
@@ -57,11 +58,6 @@ export default class ConversationBoxReceiver extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  base: {
-    backgroundColor: '#ede6e3',
-    height: '100%',
-    marginTop: '3%',
-  },
-  question_box: {},
-  question: {padding: 5},
+  question: {padding: 3, fontWeight: 'bold'},
+  person: {alignSelf: 'center'},
 });

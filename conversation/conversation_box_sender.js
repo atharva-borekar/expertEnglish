@@ -16,7 +16,7 @@ export default class ConversationBoxSender extends React.Component {
       : this.setState({speechstate: false});
   };
   render() {
-    const {text} = this.props;
+    const {person, text} = this.props;
 
     //All the props must be strings like "Lorem Ipsum"
     return (
@@ -24,7 +24,7 @@ export default class ConversationBoxSender extends React.Component {
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
           maxWidth: '70%',
-          backgroundColor: '#ede6e9',
+          backgroundColor: '#ecf0f1',
           borderRadius: 15,
           marginTop: '2%',
           alignSelf: 'flex-start',
@@ -44,8 +44,9 @@ export default class ConversationBoxSender extends React.Component {
               color={this.state.speechstate ? 'green' : 'red'}
             />
             <Text style={{alignSelf: 'center', marginLeft: '3%'}}>
-              {this.state.speechstate ? 'Playing' : 'Stopped'}
+              {this.state.speechstate ? 'Playing-' : 'Stopped-'}
             </Text>
+            <Text style={styles.person}>{person}</Text>
           </View>
 
           <Text style={styles.question}>{text}</Text>
@@ -56,5 +57,6 @@ export default class ConversationBoxSender extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  question: {padding: 5},
+  question: {padding: 3, fontWeight: 'bold'},
+  person: {alignSelf: 'center'},
 });

@@ -89,7 +89,7 @@ export default class Phone extends Component {
               textColor="#ffffff"
               borderBottomColor="#000000"
               inputType="number"
-              customStyle={{marginBottom: 30}}
+              customStyle={{marginBottom: '10%'}}
               value={this.state.phone}
               onChangeText={this.handlePhoneChange}
             />
