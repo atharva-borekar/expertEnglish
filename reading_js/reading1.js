@@ -13,7 +13,7 @@ export default class Reading1 extends React.Component {
     color3: '#8d201f',
     color4: '#8d201f',
   };
-
+  // After clicking on submit click any option to know answer
   render() {
     this.setColor = () => {
       //Function to change color onPress
@@ -33,18 +33,18 @@ export default class Reading1 extends React.Component {
           break;
       }
     };
-    const {TextHolder, op1, op2, op3, op4, correct_option} = this.props;
+    const {question, op1, op2, op3, op4, correct_option} = this.props;
     //All the props must be strings like "Lorem Ipsum"
     return (
       <View style={styles.base}>
+        <View style={styles.question_box}>
+          {/* View for Question */}
+          <ScrollView>
+            {/* Display the text stored in TextHolder */}
+            <Text style={styles.question}>{question}</Text>
+          </ScrollView>
+        </View>
         <ScrollView>
-          <View style={styles.question_box}>
-            {/* View for Question */}
-            <ScrollView>
-              {/* Display the text stored in TextHolder */}
-              <Text style={styles.question}>{TextHolder}</Text>
-            </ScrollView>
-          </View>
           <View style={styles.mcq_options}>
             {/* View for displaying mcq options */}
             <TouchableOpacity
@@ -54,7 +54,7 @@ export default class Reading1 extends React.Component {
                 this.setState({
                   radioButton: 'option1',
                   selected_option: 'option1',
-                }) || this.setColor()
+                })
               }>
               <Icon
                 name={
@@ -76,7 +76,7 @@ export default class Reading1 extends React.Component {
                 this.setState({
                   radioButton: 'option2',
                   selected_option: 'option2',
-                }) || this.setColor()
+                })
               }>
               <Icon
                 name={
@@ -96,7 +96,7 @@ export default class Reading1 extends React.Component {
                 this.setState({
                   radioButton: 'option3',
                   selected_option: 'option3',
-                }) || this.setColor()
+                })
               }>
               <Icon
                 name={
@@ -116,7 +116,7 @@ export default class Reading1 extends React.Component {
                 this.setState({
                   radioButton: 'option4',
                   selected_option: 'option4',
-                }) || this.setColor()
+                })
               }>
               <Icon
                 name={
@@ -136,7 +136,7 @@ export default class Reading1 extends React.Component {
             </Text>
           </View>
         </ScrollView>
-        <TouchableOpacity style={styles.submit_button}>
+        <TouchableOpacity style={styles.submit_button} onPress={this.setColor}>
           <Text style={styles.submit_button_text}>Submit</Text>
         </TouchableOpacity>
       </View>
@@ -146,18 +146,18 @@ export default class Reading1 extends React.Component {
 
 const styles = StyleSheet.create({
   base: {
-    backgroundColor: '#ede6e3',
+    backgroundColor: '#bdc3c7',
     height: '100%',
   },
   question_box: {
     width: '95%',
-    backgroundColor: '#ede6e9',
+    backgroundColor: '#ecf0f1',
     borderRadius: 15,
     marginTop: '10%',
     justifyContent: 'center',
     alignSelf: 'center',
     elevation: 20,
-    height: '40%',
+    height: '25%',
   },
   question: {
     justifyContent: 'center',
@@ -171,10 +171,10 @@ const styles = StyleSheet.create({
   checkbox: {
     alignItems: 'center',
     flexDirection: 'row',
-    width: '90%',
-    backgroundColor: '#efefe6',
+    width: '95%',
+    backgroundColor: '#ffffff',
     elevation: 10,
-    marginLeft: '5%',
+    marginLeft: '2.5%',
     borderRadius: 12,
     marginTop: '2%',
     alignContent: 'center',
