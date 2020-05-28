@@ -1,17 +1,55 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {ScrollView} from 'react-native-gesture-handler';
-import ListItem from './screens/list_item';
+import {
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Dimensions,
+  Image,
+} from 'react-native';
+import {createDrawerNavigator, DrawerItems} from 'react-navigation-drawer';
+import HomeS from './screens/HomeS';
+import AboutS from './screens/AboutS';
+import {createAppContainer} from 'react-navigation';
 
 export default class App1 extends React.Component {
   render() {
-    const {question, op1, op2, op3, op4, correct_option} = this.props;
-    //All the props must be strings like "Lorem Ipsum"
-    return (
-      <ListItem heading="heading" description="description" image="fill" />
-    );
+    const AppNavigator = createAppContainer(AppDrawerNavigator);
+    return <AppNavigator />;
   }
 }
+
+const CustomDrawerComponent = props => (
+  <SafeAreaView style={{flex: 1}}>
+    <View style={{height: 150, backgroundColor: 'white'}}>
+      <Image
+        style={{
+          flex: 1,
+          width: undefined,
+          height: undefined,
+          resizeMode: 'contain',
+        }}
+        source={require('./images/Logo.jpg')}
+      />
+    </View>
+    <ScrollView>
+      <DrawerItems {...props} />
+    </ScrollView>
+  </SafeAreaView>
+);
+
+const AppDrawerNavigator = createDrawerNavigator(
+  {
+    Home: HomeS,
+    About: AboutS,
+  },
+  {
+    contentComponent: CustomDrawerComponent,
+    contentOptions: {
+      activeTintColor: '#0080ff',
+    },
+  },
+);
 
 const styles = StyleSheet.create({});

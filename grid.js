@@ -38,7 +38,7 @@ export default class Grid extends React.Component {
           <View style={styles.heading1}>
             <Text
               // eslint-disable-next-line react-native/no-inline-styles
-              style={styles.head_text}>
+              style={styles.sub_head_text}>
               Exercises
             </Text>
           </View>
@@ -93,7 +93,7 @@ export default class Grid extends React.Component {
               Conversations
             </Text>
           </View>
-          <View style={styles.grammar || {marginBottom: '3%'}}>
+          <View style={styles.grammar || {paddingBottom: '3%'}}>
             <ScrollView horizontal={true}>
               <GridBut text="Conversation 1" image="conversation" />
               <View
@@ -142,14 +142,12 @@ export default class Grid extends React.Component {
 const styles = StyleSheet.create({
   base: {
     backgroundColor: '#ede6e3',
-    paddingBottom: '3%',
+    paddingBottom: '5%',
   },
   heading: {
     backgroundColor: '#3C3C3C',
     height: 40,
-    marginTop: '3%',
   },
-  heading1: {marginTop: '1%'},
   grammar: {
     marginLeft: '5%',
     marginRight: '5%',
@@ -161,11 +159,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     elevation: 20,
     justifyContent: 'center',
+    marginBottom: '3%',
   },
   head_text: {
     fontWeight: 'bold',
     fontSize: 20,
     marginLeft: '3%',
     color: '#ffffff',
+  },
+  sub_head_text: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginLeft: '3%',
+    color: '#808588',
   },
 });

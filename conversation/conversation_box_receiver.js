@@ -29,11 +29,10 @@ export default class ConversationBoxReceiver extends React.Component {
           borderRadius: 15,
           alignSelf: 'flex-end',
           elevation: 20,
-          flexDirection: 'row',
+          flexDirection: 'row-reverse',
           flexWrap: 'wrap',
-          marginLeft: '37.5%',
           marginTop: '2%',
-          marginRight: '2.5%',
+          marginLeft: '2%',
         }}>
         {/* View for Question */}
         <TouchableOpacity onPress={this.onPress}>
@@ -44,9 +43,16 @@ export default class ConversationBoxReceiver extends React.Component {
               color={this.state.speechstate ? 'green' : 'red'}
             />
             <Text style={{alignSelf: 'center', marginLeft: '3%'}}>
-              {this.state.speechstate ? 'Playing-' : 'Stopped-'}
+              {this.state.speechstate ? 'Playing' : 'Stopped'}
             </Text>
-            <Text style={styles.person}>{person}</Text>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row-reverse',
+                marginLeft: '5%',
+              }}>
+              <Text style={styles.person}>{person}</Text>
+            </View>
           </View>
 
           <Text style={styles.question}>{text}</Text>

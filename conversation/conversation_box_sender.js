@@ -31,7 +31,7 @@ export default class ConversationBoxSender extends React.Component {
           elevation: 20,
           flexDirection: 'row',
           flexWrap: 'wrap',
-          marginLeft: '2.5%',
+          marginLeft: '2%',
         }}>
         {/* View for Question */}
         {/* Display the text stored in TextHolder */}
@@ -44,9 +44,12 @@ export default class ConversationBoxSender extends React.Component {
               color={this.state.speechstate ? 'green' : 'red'}
             />
             <Text style={{alignSelf: 'center', marginLeft: '3%'}}>
-              {this.state.speechstate ? 'Playing-' : 'Stopped-'}
+              {this.state.speechstate ? 'Playing' : 'Stopped'}
             </Text>
-            <Text style={styles.person}>{person}</Text>
+            <View
+              style={{flex: 1, flexDirection: 'row-reverse', marginLeft: '5%'}}>
+              <Text style={styles.person}>{person}</Text>
+            </View>
           </View>
 
           <Text style={styles.question}>{text}</Text>

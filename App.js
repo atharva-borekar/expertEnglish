@@ -3,7 +3,6 @@ import {SafeAreaView, StyleSheet, ScrollView, View, Image} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createDrawerNavigator, DrawerItems} from 'react-navigation-drawer';
 import HomeScreen from './screens/HomeScreen';
-import Sample from './sample';
 import {Entypo} from 'react-native-vector-icons';
 
 import AboutScreen from './screens/AboutScreen';
@@ -21,11 +20,10 @@ const CustomDrawerComponent = props => (
       <Image
         source={require('./images/Logo.jpg')}
         style={{
-          height: 100,
-          width: 250,
-          alignSelf: 'center',
-          marginTop: 20,
-          borderRadius: 5,
+          height: undefined,
+          width: undefined,
+          flex: 1,
+          resizeMode: 'contain',
         }}
       />
     </View>
@@ -37,25 +35,10 @@ const CustomDrawerComponent = props => (
 
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Home: {
-      screen: HomeScreen,
-      drawerNavigationOptions: {
-        title: 'Home',
-        drawerIcon: ({tintColor}) => (
-          <Entypo name="home" size={16} color={tintColor} />
-        ),
-      },
-    },
+    Home: HomeScreen,
     'About Us': AboutScreen,
   },
   {contentComponent: CustomDrawerComponent},
 );
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({});
